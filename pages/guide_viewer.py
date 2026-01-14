@@ -3,7 +3,7 @@ import streamlit as st
 from database import KittenGuideDB
 
 st.set_page_config(
-    page_title="Guide - How To Work A Cat",
+    page_title="Guide - How to Work a Cat",
     page_icon="🐱",
     layout="wide"
 )

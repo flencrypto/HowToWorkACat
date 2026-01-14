@@ -3,7 +3,7 @@ import streamlit as st
 from database import KittenGuideDB
 
 st.set_page_config(
-    page_title="Library - How To Work A Cat",
+    page_title="Library - How to Work a Cat",
     page_icon="📖",
     layout="wide"
 )
@@ -123,14 +123,11 @@ for guide in sorted(guides_to_show, key=lambda g: g.title):
         
         st.markdown('</div>', unsafe_allow_html=True)
 
-# Topic overview
+# Topic overview in sidebar (display only, filtering handled by selectbox above)
 with st.sidebar:
     st.markdown("### 📚 Topics Overview")
-    if st.button("All Topics", use_container_width=True):
-        st.session_state["library_selected_topic"] = "All Topics"
-        st.rerun()
+    st.markdown(f"**All Topics** ({len(all_guides)} guides)")
+    st.markdown("---")
     for topic in sorted(topics.keys()):
         count = len(topics[topic])
-        if st.button(f"{topic} ({count})", key=f"sidebar_{topic}", use_container_width=True):
-            st.session_state["library_selected_topic"] = topic
-            st.rerun()
+        st.markdown(f"**{topic}** ({count} guides)")
