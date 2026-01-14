@@ -31,10 +31,39 @@ A playful, UK-toned, offline-first kitten-care guide for first-time kitten owner
 
 ## Installation
 
+### Local Development
+
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
 ```
+
+### Deployment
+
+This app is designed to be deployed on **Streamlit Community Cloud** (recommended) or any platform that supports Python web applications.
+
+#### Streamlit Community Cloud (Recommended)
+
+1. Push your code to a GitHub repository
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Sign in with GitHub
+4. Click "New app"
+5. Select your repository, branch, and main file (`app.py`)
+6. Click "Deploy"
+
+Your app will be live at `https://[your-app-name].streamlit.app`
+
+#### Alternative: Docker Deployment
+
+For deployment on platforms like Railway, Render, or similar:
+
+```bash
+# Build and run with Docker
+docker build -t kitten-guide .
+docker run -p 8501:8501 kitten-guide
+```
+
+**Note**: Netlify is for static sites only and cannot host Python/Streamlit apps. Use Streamlit Community Cloud, Railway, Render, or Heroku instead.
 
 ## Usage
 

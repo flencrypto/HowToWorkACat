@@ -1,0 +1,15 @@
+# Docker ignore file
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.db
+venv/
+ENV/
+env/
+.venv
+.git
+.gitignore
+*.md
+.streamlit/secrets.toml
