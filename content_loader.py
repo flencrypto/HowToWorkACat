@@ -230,7 +230,7 @@ Would you use a public toilet with no door, next to the kitchen, that hasn't bee
 - Soft eyes
 - What to do: “Let’s play!” — initiate play, offer toys, engage
 
-### 🟠 Overstimulated (amber)
+### 🟠 Overstimulated (amber/orange)
 - Tail flicking
 - Ears sideways
 - Dilated pupils
