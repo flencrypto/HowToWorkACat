@@ -172,7 +172,8 @@ Key data structures (see `models.py`):
 
 - Primary platform: Streamlit Community Cloud (free)
 - Alternative: Docker deployment (Dockerfile included)
-- Not compatible with static site hosts (Netlify, GitHub Pages)
+- Not compatible with static site hosts (Netlify, GitHub Pages) - requires Python runtime
+- Note: netlify.toml exists only to redirect users to deployment instructions
 - See DEPLOYMENT.md for detailed deployment options
 
 ## What NOT to Do
