@@ -13,7 +13,7 @@ auth = ClarifaiAuthHelper.from_streamlit(st)
 stub = create_stub(auth)
 userDataObject = auth.get_user_app_id_proto()
 lister = ClarifaiResourceLister(stub, auth.user_id, auth.app_id, page_size=16)
-st.title("Simple example to list inputs")
+st.title("HowatoWorkACat")
 
 with st.form(key="data-inputs"):
   mtotal = st.number_input(
