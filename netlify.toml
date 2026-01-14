@@ -1,0 +1,16 @@
+# Netlify Configuration
+# Note: This app cannot run on Netlify as it's a Python/Streamlit application.
+# Netlify is for static sites only.
+
+# This file provides a redirect to inform users about proper deployment
+
+[[redirects]]
+  from = "/*"
+  to = "/deployment-info.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
