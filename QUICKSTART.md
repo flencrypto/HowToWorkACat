@@ -8,8 +8,8 @@ A playful, UK-toned, offline-first kitten-care guide built with Streamlit.
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
-cd moduletemplate
+git clone https://github.com/flencrypto/HowToWorkACat.git
+cd HowToWorkACat
 
 # 2. Install dependencies
 pip install -r requirements.txt
@@ -18,6 +18,16 @@ pip install -r requirements.txt
 streamlit run app.py
 
 # 4. Open your browser to http://localhost:8501
+```
+
+**What happens on first run:**
+```
+┌─────────────────────────────────────┐
+│ 1. Database created (kitten_guide.db)│
+│ 2. Sample content loaded             │
+│ 3. App starts on port 8501           │
+│ 4. Open browser automatically        │
+└─────────────────────────────────────┘
 ```
 
 ### Deploy to Streamlit Cloud (Recommended - FREE)
@@ -53,6 +63,21 @@ docker run -p 8501:8501 kitten-guide
 - Server to execute Python code
 - Active process to handle requests
 
+**Platform Selection Guide:**
+```
+Need FREE hosting?
+    ↓
+    YES → Streamlit Community Cloud ✅
+    ↓
+    NO → Continue
+         ↓
+    Have Docker experience?
+         ↓
+         YES → Railway or Google Cloud Run ✅
+         ↓
+         NO → Render (simple UI) ✅
+```
+
 **Recommended platforms instead:**
 - ✅ Streamlit Community Cloud (FREE, best for Streamlit)
 - ✅ Railway (easy Docker deployment)
@@ -72,24 +97,35 @@ docker run -p 8501:8501 kitten-guide
 ### Project Structure
 
 ```
-moduletemplate/
-├── app.py                      # Main Streamlit app
-├── database.py                 # SQLite database management
-├── models.py                   # Data models
-├── content_loader.py           # Sample content
-├── pages/                      # Streamlit multi-page app
-│   ├── 0_kitten_ops_manual.py
-│   ├── 1_search.py
-│   ├── 2_library.py
-│   ├── 3_saved.py
-│   ├── 4_emergency.py
-│   └── guide_viewer.py
-├── .streamlit/                 # Streamlit configuration
-│   └── config.toml
-├── requirements.txt            # Python dependencies
-├── Dockerfile                  # Container configuration
-└── DEPLOYMENT.md               # Detailed deployment guide
+HowToWorkACat/
+├── app.py                      # 🏠 Main Streamlit app & home page
+├── database.py                 # 💾 SQLite database management
+├── models.py                   # 📦 Data models (Guide, Diagram, etc.)
+├── content_loader.py           # 📚 Sample kitten-care content
+│
+├── pages/                      # 📄 Multi-page app sections
+│   ├── 0_kitten_ops_manual.py # Step-by-step onboarding
+│   ├── 1_search.py            # Full-text search
+│   ├── 2_library.py           # Browse by topic
+│   ├── 3_saved.py             # Bookmarked guides
+│   ├── 4_emergency.py         # Emergency vet guide
+│   └── guide_viewer.py        # Individual guide display
+│
+├── .streamlit/                 # ⚙️ Streamlit configuration
+│   └── config.toml            # Theme & server settings
+│
+├── requirements.txt            # 📋 Python dependencies
+├── Dockerfile                  # 🐳 Container configuration
+├── README.md                   # 📖 Main documentation
+├── QUICKSTART.md              # 🚀 Quick start guide
+└── DEPLOYMENT.md              # 🌐 Detailed deployment guide
 ```
+
+**Key Files Explained:**
+- **app.py**: Entry point with panic buttons and featured guides
+- **database.py**: Handles all SQLite operations (CRUD for guides, bookmarks)
+- **content_loader.py**: Pre-loads 7+ comprehensive kitten-care guides
+- **pages/**: Each file creates a sidebar navigation item automatically
 
 ### Tech Stack
 
