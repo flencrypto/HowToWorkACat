@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Application database (created at runtime)
+*.db
+kitten_guide.db
