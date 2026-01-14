@@ -157,7 +157,7 @@ if search_query:
     else:
         st.info("No guides found. Try different search terms or browse the library.")
         if st.button("📖 Browse Library"):
-            st.switch_page("pages/library.py")
+            st.switch_page("pages/2_library.py")
 else:
     # Show all guides if no search
     st.markdown("### 💡 Browse All Guides")
@@ -189,4 +189,4 @@ else:
     if len(all_guides) > 5:
         st.caption(f"... and {len(all_guides) - 5} more guides")
         if st.button("📖 View All in Library"):
-            st.switch_page("pages/library.py")
+            st.switch_page("pages/2_library.py")
