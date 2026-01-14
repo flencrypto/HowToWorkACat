@@ -222,26 +222,25 @@ Would you use a public toilet with no door, next to the kitchen, that hasn't bee
 ## Why this matters
 "It's cute when they're tiny" becomes "I'm bleeding through my jeans" very quickly. Kittens have needle teeth and no concept of gentle. Teach them now or regret it when they're 5kg of muscle with sabres.
 
-## Cat Body Language Decoder
+## Cat Body Language Decoder (branded palette)
 
-```
-    HAPPY TO PLAY ✅                OVERSTIMULATED ⚠️           STOP NOW 🛑
-    
-     /\_/\                          /\_/\                       /\_/\
-    ( ^.^ )                        ( o.o )                     ( >.< )
-     > ^ <                          > ~ <                       > ∩ <
-    ┌─────┐                        ┌─────┐                     ┌─────┐
-    │ ~   │ Relaxed tail           │ ~~~ │ Tail flicking       │ ||| │ Tail lashing
-    │     │ Forward ears           │     │ Ears sideways       │     │ Ears flat back
-    │     │ Soft eyes              │     │ Dilated pupils      │     │ Tense body
-    
-    "Let's play!"                  "Getting too much"          "STOP OR I BITE"
-    
-    WHAT TO DO:
-    ✅ Initiate play              ⚠️ Slow down                🛑 Walk away
-    ✅ Offer toys                 ⚠️ Watch closely            🛑 Give space
-    ✅ Engage                     ⚠️ Reduce intensity         🛑 End interaction
-```
+### ✅ Happy to play (sage green)
+- Relaxed tail
+- Forward ears
+- Soft eyes
+- What to do: “Let’s play!” — initiate play, offer toys, engage
+
+### 🟠 Overstimulated (amber)
+- Tail flicking
+- Ears sideways
+- Dilated pupils
+- What to do: Slow down — reduce intensity, watch closely
+
+### 🛑 Stop now (brick red)
+- Tail lashing
+- Ears flat back
+- Tense body
+- What to do: STOP OR I BITE — walk away, give space, end interaction
 
 ## Bite Prevention Flowchart
 ```
