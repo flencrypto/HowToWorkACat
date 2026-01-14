@@ -40,30 +40,31 @@ streamlit run app.py
 
 ### Deployment
 
-This app is designed to be deployed on **Streamlit Community Cloud** (recommended) or any platform that supports Python web applications.
+⚠️ **Important**: This is a Python/Streamlit application. **Netlify cannot host this app** as it only supports static sites.
 
-#### Streamlit Community Cloud (Recommended)
+#### Recommended: Streamlit Community Cloud (FREE & Easy)
 
-1. Push your code to a GitHub repository
-2. Go to [share.streamlit.io](https://share.streamlit.io)
-3. Sign in with GitHub
-4. Click "New app"
-5. Select your repository, branch, and main file (`app.py`)
-6. Click "Deploy"
+1. Push your code to GitHub
+2. Visit [share.streamlit.io](https://share.streamlit.io)
+3. Sign in with GitHub and click "New app"
+4. Select your repository, branch (`main`), and file (`app.py`)
+5. Click "Deploy"
 
 Your app will be live at `https://[your-app-name].streamlit.app`
 
-#### Alternative: Docker Deployment
+#### Alternative Platforms
 
-For deployment on platforms like Railway, Render, or similar:
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on:
+- Docker deployment (Railway, Render, Google Cloud Run)
+- Heroku deployment
+- Azure App Service
+- Self-hosted options
 
+**Quick Docker deployment:**
 ```bash
-# Build and run with Docker
 docker build -t kitten-guide .
 docker run -p 8501:8501 kitten-guide
 ```
-
-**Note**: Netlify is for static sites only and cannot host Python/Streamlit apps. Use Streamlit Community Cloud, Railway, Render, or Heroku instead.
 
 ## Usage
 

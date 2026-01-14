@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Work a Cat - Deployment Info</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .steps {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .steps ol {
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐱 How to Work a Cat - Deployment Information</h1>
+    
+    <div class="warning">
+        <h2>⚠️ Important Note</h2>
+        <p><strong>This application cannot run on Netlify.</strong> Netlify is designed for static websites only and cannot host Python/Streamlit applications.</p>
+    </div>
+    
+    <div class="success">
+        <h2>✅ Recommended Deployment: Streamlit Community Cloud</h2>
+        <p>The best (and free!) way to deploy this Streamlit app is using <strong>Streamlit Community Cloud</strong>.</p>
+    </div>
+    
+    <div class="steps">
+        <h3>Quick Deployment Steps:</h3>
+        <ol>
+            <li>Make sure your code is pushed to a GitHub repository</li>
+            <li>Visit <a href="https://share.streamlit.io" target="_blank">share.streamlit.io</a></li>
+            <li>Sign in with your GitHub account</li>
+            <li>Click "New app"</li>
+            <li>Select your repository, branch, and main file path (<code>app.py</code>)</li>
+            <li>Click "Deploy"</li>
+        </ol>
+        <p>Your app will be live at <code>https://[your-app-name].streamlit.app</code> in just a few minutes!</p>
+    </div>
+    
+    <h2>Alternative Deployment Options:</h2>
+    <ul>
+        <li><strong>Docker/Container Platforms:</strong> Railway, Render, Google Cloud Run, AWS ECS</li>
+        <li><strong>Platform-as-a-Service:</strong> Heroku, Azure App Service, Google App Engine</li>
+        <li><strong>Self-hosted:</strong> Use the included Dockerfile for custom deployment</li>
+    </ul>
+    
+    <div style="margin-top: 40px; text-align: center;">
+        <a href="https://share.streamlit.io" class="button" target="_blank">Deploy on Streamlit Cloud →</a>
+        <a href="https://github.com/flencrypto/moduletemplate" class="button" target="_blank">View on GitHub</a>
+    </div>
+    
+    <hr style="margin: 40px 0;">
+    
+    <h3>For Developers:</h3>
+    <p>To run this app locally:</p>
+    <pre><code>pip install -r requirements.txt
+streamlit run app.py</code></pre>
+    
+    <p><small>See <code>README.md</code> for more detailed deployment instructions.</small></p>
+</body>
+</html>
