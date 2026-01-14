@@ -1,8 +1,8 @@
 ![Clarifai logo](https://www.clarifai.com/hs-fs/hubfs/logo/Clarifai/clarifai-740x150.png?width=240)
 
-# HowatoWorkACat
+# HowToWorkACat
 
-This is a Clarifai UI module for HowatoWorkACat.
+This is a Clarifai UI module for HowToWorkACat.
 
 
 ## To use this repo
