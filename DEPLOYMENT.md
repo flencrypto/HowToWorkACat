@@ -24,7 +24,7 @@
    2. Sign in with GitHub
    3. Click "New app"
    4. Select:
-      - Repository: flencrypto/moduletemplate
+      - Repository: [your-username]/[your-repo-name]
       - Branch: main (or your branch)
       - Main file path: app.py
    5. Click "Deploy!"

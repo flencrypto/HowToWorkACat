@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-*.db
 venv/
 ENV/
 env/
@@ -13,3 +12,6 @@ env/
 .gitignore
 *.md
 .streamlit/secrets.toml
+# Exclude database only if you want it generated fresh on each deployment
+# Remove the line below if you want to include pre-populated database
+# *.db
