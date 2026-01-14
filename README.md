@@ -1,10 +1,10 @@
-# How to Work a Cat 🐱
+# How To Work A Cat 🐱
 
 A playful, UK-toned, offline-first kitten-care guide for first-time kitten owners, families, and temporary fosterers.
 
 ## Overview
 
-**How to Work a Cat** is a reassuring, lightly sarcastic guide explaining real kitten needs via analogies, metaphors, and human comparisons. Think: "keep the litter tray like a shared bathroom you'd happily eat toast in" or "you're not a 24/7 chew-toy subscription service".
+**How To Work A Cat** is a reassuring, lightly sarcastic guide explaining real kitten needs via analogies, metaphors, and human comparisons. Think: "keep the litter tray like a shared bathroom you'd happily eat toast in" or "you're not a 24/7 chew-toy subscription service".
 
 ### Application Architecture
 

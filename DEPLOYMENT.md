@@ -1,6 +1,6 @@
 # DEPLOYMENT.md
 
-## How to Deploy "How to Work a Cat" Streamlit App
+## How to Deploy "How To Work A Cat" Streamlit App
 
 ### ⚠️ Important: Netlify is NOT Compatible
 
