@@ -57,6 +57,8 @@ st.markdown("Browse all kitten-care guides organised by topic")
 # Get all guides
 all_guides = db.get_all_guides()
 
+# Manage topic selection in session state
+topic_options = ["All Topics"]
 # Organize by topic
 topics = {}
 for guide in all_guides:
@@ -64,12 +66,20 @@ for guide in all_guides:
         if topic not in topics:
             topics[topic] = []
         topics[topic].append(guide)
+        if topic not in topic_options:
+            topic_options.append(topic)
+topic_options = topic_options[:1] + sorted(topic_options[1:])
+
+if "library_selected_topic" not in st.session_state:
+    st.session_state["library_selected_topic"] = "All Topics"
 
 # Topic filter
 st.markdown("### Filter by Topic")
 selected_topic = st.selectbox(
     "Choose a topic",
-    ["All Topics"] + sorted(topics.keys())
+    topic_options,
+    index=topic_options.index(st.session_state["library_selected_topic"]),
+    key="library_selected_topic"
 )
 
 if selected_topic == "All Topics":
@@ -116,6 +126,11 @@ for guide in sorted(guides_to_show, key=lambda g: g.title):
 # Topic overview
 with st.sidebar:
     st.markdown("### 📚 Topics Overview")
+    if st.button("All Topics", use_container_width=True):
+        st.session_state["library_selected_topic"] = "All Topics"
+        st.experimental_rerun()
     for topic in sorted(topics.keys()):
         count = len(topics[topic])
-        st.markdown(f"**{topic}**: {count} guide(s)")
+        if st.button(f"{topic} ({count})", key=f"sidebar_{topic}", use_container_width=True):
+            st.session_state["library_selected_topic"] = topic
+            st.experimental_rerun()

@@ -73,7 +73,7 @@ steps = [
         'description': 'Set up safe room, buy supplies, kitten-proof house',
         'checklist': [
             'Choose a "base camp" room (bedroom or bathroom)',
-            'Buy litter tray, litter, food bowls, kitten food',
+            'Buy [litter tray](https://amzn.to/4pAAnEJ), [litter](https://amzn.to/49vJCBz), food bowls, [kitten food](https://amzn.to/49TqoFQ), and a sturdy cat carrier',
             'Remove toxic plants (lilies, etc.)',
             'Hide cables and small objects',
             'Set up bed/hideaway spots'
