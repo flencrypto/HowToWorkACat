@@ -6,13 +6,70 @@ A playful, UK-toned, offline-first kitten-care guide for first-time kitten owner
 
 **How to Work a Cat** is a reassuring, lightly sarcastic guide explaining real kitten needs via analogies, metaphors, and human comparisons. Think: "keep the litter tray like a shared bathroom you'd happily eat toast in" or "you're not a 24/7 chew-toy subscription service".
 
+### Application Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Streamlit Web App                        │
+│                      (app.py)                               │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │  Home Page  │  │    Search    │  │   Library    │      │
+│  │  (Panic     │  │  (Full-text) │  │  (Browse by  │      │
+│  │   Buttons)  │  │              │  │    Topic)    │      │
+│  └─────────────┘  └──────────────┘  └──────────────┘      │
+│                                                             │
+│  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐      │
+│  │ Kitten Ops  │  │    Saved     │  │  Emergency   │      │
+│  │   Manual    │  │  Bookmarks   │  │   (Red Flags)│      │
+│  └─────────────┘  └──────────────┘  └──────────────┘      │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+                       ▼
+           ┌───────────────────────┐
+           │   Database Layer      │
+           │   (database.py)       │
+           │                       │
+           │  SQLite: Guides,      │
+           │  Diagrams, Bookmarks  │
+           └───────────────────────┘
+                       ▲
+                       │
+           ┌───────────────────────┐
+           │   Content Loader      │
+           │  (content_loader.py)  │
+           │                       │
+           │  Sample kitten-care   │
+           │  guides & diagrams    │
+           └───────────────────────┘
+```
+
 ### Core Features
 
 - 🔍 **Offline Search**: Full-text search with filters (age, topic, urgency)
+  - Search by keywords, topics, or specific issues
+  - Filter by kitten age and urgency level
+  - Instant results from local database
+  
 - 📚 **Kitten Ops Manual**: Step-by-step onboarding checklist for your first 10 steps
+  - Day-by-day guidance for the first week
+  - Interactive checklists to track progress
+  - Essential setup tasks prioritized
+  
 - 🎨 **Diagram Pack**: Visual guides for safe room setup, body language, poison risks
+  - ASCII diagrams for safe room layouts
+  - Cat body language decoder charts
+  - Visual decision trees for common problems
+  - Litter tray placement guides
+  
 - 🆘 **Panic Buttons**: Quick access to "Not eating", "Litter disasters", "Scratching sofa", etc.
+  - One-click access to emergency guides
+  - Fast solutions for 3am crises
+  - Clear "Do this NOW" steps
+  
 - 💾 **Offline-first**: All content bundled and searchable without internet
+  - No internet required after initial load
+  - SQLite database for fast queries
+  - Works anywhere, anytime
 
 ### Target Users
 
@@ -20,6 +77,25 @@ A playful, UK-toned, offline-first kitten-care guide for first-time kitten owner
 - Parents with family kitten
 - Temporary fosterers
 - Anyone facing: biting, scratching, zoomies at 3am, hiding, or litter disasters
+
+### User Journey Flow
+
+```
+    New User Arrives
+          ↓
+    ┌─────────────────┐
+    │   Home Page     │ ← Panic buttons for immediate help
+    │   🆘 Quick Help │
+    └─────────────────┘
+          ↓
+    First time? → Kitten Ops Manual (Day-by-day guide)
+          ↓
+    Specific issue? → Search or Library
+          ↓
+    Found solution? → Bookmark for later (Saved section)
+          ↓
+    Red flags? → Emergency page (When to call vet NOW)
+```
 
 ### Content Principles
 

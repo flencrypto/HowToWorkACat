@@ -17,6 +17,39 @@ def load_sample_content(db: KittenGuideDB):
 ## Why this matters
 The first day sets the tone for your kitten's confidence. Think of it like you've just moved into a shared flat where everything smells wrong, you don't know where the loo is, and your new flatmate keeps trying to cuddle you.
 
+## Safe Room Setup Diagram
+```
+    ┌─────────────────────────────────────────┐
+    │         SAFE ROOM LAYOUT                │
+    │                                         │
+    │  [Door]                                 │
+    │                                         │
+    │   🛏️ Hiding Spot         💧 Water      │
+    │   (under bed/box)         Bowl          │
+    │                                         │
+    │                                         │
+    │   👕 Your t-shirt                       │
+    │   in cozy bed            🍽️ Food       │
+    │                           Bowl          │
+    │                                         │
+    │                    Keep 1+ meter apart  │
+    │                    ↕                    │
+    │                                         │
+    │   🚽 Litter Tray                       │
+    │   (far from food!)                     │
+    │                                         │
+    │              [Window - close curtains]  │
+    └─────────────────────────────────────────┘
+
+    KEY:
+    ✅ Food & water together (but separate bowls)
+    ✅ Litter tray in opposite corner
+    ✅ Multiple hiding spots = security
+    ✅ Your scent (t-shirt) = comfort
+    ❌ Don't put food next to litter
+    ❌ Don't block hiding spots
+```
+
 ## Do this now (if you're panicking)
 1. **Put them in one room** - bedroom or bathroom, not the whole house
 2. **Show them the litter tray** - place them in it gently, don't make a fuss
@@ -63,7 +96,15 @@ Imagine you've been dropped in a foreign country where you don't speak the langu
             age_max_weeks=16,
             urgency="",
             analogy_cards=["Like moving into a shared flat where everything smells wrong"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="safe-room-setup",
+                    asset_ref="safe_room_layout",
+                    alt="Safe room layout showing optimal placement of litter tray, food, water, and hiding spots",
+                    caption="Ideal safe room setup for first 24 hours - keep food away from litter tray",
+                    hotspots=["litter-far-from-food", "hiding-spots", "water-and-food-together"]
+                )
+            ],
             do_list=["Let them approach you", "Speak softly", "Keep one room as base camp", "Put worn t-shirt in their bed"],
             dont_list=["Chase them to cuddle", "Let other pets investigate yet", "Have mates round to meet kitten", "Move litter tray around"],
             updated_at=datetime.now()
@@ -77,6 +118,35 @@ Imagine you've been dropped in a foreign country where you don't speak the langu
 
 ## Why this matters
 A grim litter tray = wees on your bed. It's that simple. Cats are cleaner than you. If the tray smells like a festival toilet, they'll find somewhere better (your laundry basket, probably).
+
+## Litter Tray Placement Guide
+```
+    GOOD LOCATIONS ✅               BAD LOCATIONS ❌
+    
+    🚽 Utility room corner          ❌ Next to food bowls
+    (quiet, private)                (Would you eat in a loo?)
+    
+    🚽 Bathroom corner              ❌ Busy hallway
+    (makes sense, right?)           (Like using a toilet on stage)
+    
+    🚽 Spare bedroom corner         ❌ Next to washing machine
+    (peaceful, accessible)          (Noise = terror)
+    
+    🚽 Under stairs                 ❌ In garage
+    (private, easy to reach)        (Too isolated, too cold)
+
+    DEPTH & SIZE GUIDE:
+    ┌─────────────────────┐
+    │    3-5cm deep       │ ← Perfect depth
+    │  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓  │
+    │                     │
+    └─────────────────────┘
+     ↑                   ↑
+     1.5x kitten length (min)
+     
+    RULE: Number of trays = Number of cats + 1
+    Example: 1 cat = 2 trays | 2 cats = 3 trays
+```
 
 ## Do this now (if you're panicking)
 1. **Scoop the poo twice a day** - morning and evening, like brushing your teeth
@@ -122,7 +192,22 @@ Would you use a public toilet with no door, next to the kitchen, that hasn't bee
             age_max_weeks=52,
             urgency="",
             analogy_cards=["Like the bathroom you share with a flatmate - keep it clean enough to eat toast in"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="litter-tray-placement",
+                    asset_ref="litter_placement_guide",
+                    alt="Guide showing good and bad locations for litter tray placement",
+                    caption="Good vs bad litter tray locations - privacy matters!",
+                    hotspots=["quiet-corner", "away-from-food", "avoid-busy-areas"]
+                ),
+                Diagram(
+                    id="litter-depth-size",
+                    asset_ref="litter_tray_sizing",
+                    alt="Diagram showing correct litter depth and tray size relative to kitten",
+                    caption="Correct litter depth (3-5cm) and tray size (1.5x kitten length)",
+                    hotspots=["litter-depth", "tray-size-ratio", "number-of-trays"]
+                )
+            ],
             do_list=["Scoop twice daily", "Use unscented clumping litter", "Wash hands after", "Praise when they use it"],
             dont_list=["Use scented litter", "Move tray randomly", "Put next to washing machine", "Let it smell bad"],
             updated_at=datetime.now()
@@ -136,6 +221,49 @@ Would you use a public toilet with no door, next to the kitchen, that hasn't bee
 
 ## Why this matters
 "It's cute when they're tiny" becomes "I'm bleeding through my jeans" very quickly. Kittens have needle teeth and no concept of gentle. Teach them now or regret it when they're 5kg of muscle with sabres.
+
+## Cat Body Language Decoder
+
+```
+    HAPPY TO PLAY ✅                OVERSTIMULATED ⚠️           STOP NOW 🛑
+    
+     /\_/\                          /\_/\                       /\_/\
+    ( ^.^ )                        ( o.o )                     ( >.< )
+     > ^ <                          > ~ <                       > ∩ <
+    ┌─────┐                        ┌─────┐                     ┌─────┐
+    │ ~   │ Relaxed tail           │ ~~~ │ Tail flicking       │ ||| │ Tail lashing
+    │     │ Forward ears           │     │ Ears sideways       │     │ Ears flat back
+    │     │ Soft eyes              │     │ Dilated pupils      │     │ Tense body
+    
+    "Let's play!"                  "Getting too much"          "STOP OR I BITE"
+    
+    WHAT TO DO:
+    ✅ Initiate play              ⚠️ Slow down                🛑 Walk away
+    ✅ Offer toys                 ⚠️ Watch closely            🛑 Give space
+    ✅ Engage                     ⚠️ Reduce intensity         🛑 End interaction
+```
+
+## Bite Prevention Flowchart
+```
+    Kitten approaches hands
+            ↓
+    Are you actively playing?
+       ↙         ↘
+     YES          NO
+      ↓            ↓
+    Use toy,    Let them sniff
+    not hands   Stay still
+      ↓            ↓
+    They bite? → HIGH "OW!"
+                    ↓
+              Walk away immediately
+                    ↓
+              Wait 5 minutes
+                    ↓
+              Offer proper toy
+                    ↓
+              Redirect energy
+```
 
 ## Do this now (if you're panicking)
 1. **Never use hands as toys** - not even once, not even "just this time"
@@ -179,7 +307,22 @@ Imagine your mate kept poking you for fun. First time, you laugh. Tenth time, yo
             age_max_weeks=52,
             urgency="",
             analogy_cards=["You are not a 24/7 chew-toy subscription service"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="cat-body-language",
+                    asset_ref="body_language_decoder",
+                    alt="Cat body language guide showing happy, overstimulated, and stop signals",
+                    caption="Learn to read your kitten's mood before they bite",
+                    hotspots=["relaxed-signals", "warning-signs", "stop-signals"]
+                ),
+                Diagram(
+                    id="bite-prevention-flow",
+                    asset_ref="bite_prevention_flowchart",
+                    alt="Flowchart showing how to respond when kitten approaches hands",
+                    caption="What to do when kitten wants to play with your hands",
+                    hotspots=["redirect-to-toys", "walk-away-response", "ow-sound"]
+                )
+            ],
             do_list=["Use wand toys", "Stop when they bite", "Give teething toys", "Tire them out"],
             dont_list=["Pull hand away fast", "Shout or tap nose", "Let them play bite", "Use fingers to play"],
             updated_at=datetime.now()
@@ -193,6 +336,54 @@ Imagine your mate kept poking you for fun. First time, you laugh. Tenth time, yo
 
 ## Why this matters
 Kittens are tiny. They have almost no reserves. Not eating for 24 hours can lead to serious problems (dehydration, low blood sugar, liver issues). But sometimes they're just being picky little sods.
+
+## Not Eating Decision Tree
+```
+    Kitten hasn't eaten
+            ↓
+    ┌───────────────────┐
+    │ How long ago?     │
+    └───────────────────┘
+            ↓
+    ┌───────┴───────┬──────────┬──────────┐
+    ↓               ↓          ↓          ↓
+  0-12hrs        12-24hrs    24+hrs    Other symptoms?
+    ↓               ↓          ↓          ↓
+  MONITOR        CALL VET   VET NOW!   VET NOW!
+    ↓
+Are they drinking?
+  ↓         ↓
+ YES        NO → CALL VET
+  ↓
+Try these:
+├─ Warm food (room temp)
+├─ Different texture (wet/dry)
+├─ Flat plate (not bowl)
+├─ Hand feeding
+└─ Smellier food (tuna)
+    ↓
+Still not eating after trying?
+    ↓
+Wait 2-4 hours, try again
+    ↓
+If reaches 12 hours → CALL VET
+```
+
+## Quick Checklist Before Panicking
+```
+□ Is food fresh? (not day-old)
+□ Is bowl clean? (cats are fussy)
+□ Has anything changed? (new home/food/stress)
+□ Are they drinking water? (crucial!)
+□ Any other symptoms? (lethargy/vomiting/diarrhea)
+
+RED FLAGS = VET NOW (even if under 24hrs):
+🔴 Not drinking water
+🔴 Lethargic/floppy
+🔴 Vomiting or diarrhoea
+🔴 Pale gums
+🔴 Cold ears/paws
+```
 
 ## Do this now (if you're panicking)
 **Time check - how long since they last ate?**
@@ -253,7 +444,22 @@ You've had days where you're too stressed/tired/unwell to eat. But you have rese
             age_max_weeks=52,
             urgency="Today",
             analogy_cards=["Like running a phone on 2% battery - doesn't take long to shut down"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="not-eating-decision-tree",
+                    asset_ref="eating_decision_tree",
+                    alt="Decision tree flowchart for when kitten won't eat",
+                    caption="When to monitor vs when to call the vet",
+                    hotspots=["time-based-decision", "red-flags", "monitoring-checklist"]
+                ),
+                Diagram(
+                    id="quick-checks-checklist",
+                    asset_ref="not_eating_checklist",
+                    alt="Quick checklist of things to verify before panicking",
+                    caption="Pre-panic checklist: food freshness, bowl cleanliness, water intake",
+                    hotspots=["food-quality", "environment-check", "symptom-check"]
+                )
+            ],
             do_list=["Warm food to room temp", "Try different textures", "Use flat plate", "Hand-feed tiny amounts"],
             dont_list=["Force feed", "Change brands constantly", "Leave wet food out all day", "Panic immediately"],
             updated_at=datetime.now()
@@ -267,6 +473,52 @@ You've had days where you're too stressed/tired/unwell to eat. But you have rese
 
 ## Why this matters
 Scratching is not optional for cats. It's like telling you not to stretch in the morning. They HAVE to do it (sharpens claws, stretches muscles, marks territory). So don't try to stop it - redirect it.
+
+## Scratching Post Setup Guide
+```
+    GOOD SCRATCHING POST ✅        BAD SCRATCHING POST ❌
+    
+         🐱                              🐱
+        ┌──┐                            ┌──┐
+    >>> │  │ <<< Rough texture     Smooth│  │ (too smooth)
+    >>> │  │ <<< (sisal/cardboard)      │  │
+    >>> │██│ <<< TALL (75cm+)      SHORT│▓▓│ (only 30cm)
+    >>> │██│     Kitten can stretch     │▓▓│ Can't stretch
+    >>> │██│                             └──┘
+    >>> │██│                         Wobbles!
+        │██│ <<< STURDY base            ○ 
+        └══┴═════ Wide base          Tiny base
+         Heavy                       Falls over
+
+    PLACEMENT STRATEGY:
+    
+    ❌ Hidden in corner → No one will see my scratching!
+    ✅ Near sofa        → Perfect! High traffic area!
+    ✅ By sleep spot    → Wake up, scratch, stretch!
+    ✅ By window        → Territory marker visible!
+    
+    MULTI-POST LAYOUT (ideal):
+    Living room: Tall sisal post near sofa
+    Bedroom: Flat cardboard scratcher near bed
+    Hallway: Vertical post by door
+    
+    = Kitten has options everywhere
+```
+
+## Furniture Protection Methods
+```
+    SOFA CORNER PROTECTION:
+    
+    Before (being destroyed):      After (protected):
+    ┌────────┐                     ┌────────┐
+    │ ╱╱╱╱╱  │ Claw marks          │ 📎Foil │ Unpleasant
+    │╱╱╱╱╱   │                     │ or     │ texture
+    │╱╱      │                     │ 📦Tape │ deters cat
+    └─────────┘                     └────────┘
+                                        +
+                                    [POST] ← Nearby
+                                    Alternative
+```
 
 ## Do this now (if you're panicking)
 1. **Get a scratching post ASAP** - tall, sturdy, rough texture (sisal or cardboard)
@@ -318,7 +570,29 @@ Imagine you HAD to stretch when you woke up, and someone put the only stretching
             age_max_weeks=52,
             urgency="",
             analogy_cards=["Issue them a legal scratching licence - they're going to scratch, so give them the right paperwork"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="good-vs-bad-post",
+                    asset_ref="scratching_post_comparison",
+                    alt="Comparison of good scratching post vs bad scratching post features",
+                    caption="Tall, sturdy, rough texture = success. Short, wobbly, smooth = ignored.",
+                    hotspots=["height-requirement", "stability", "texture-types"]
+                ),
+                Diagram(
+                    id="post-placement-strategy",
+                    asset_ref="post_placement_guide",
+                    alt="Optimal placement locations for scratching posts around the home",
+                    caption="Place posts where they already scratch and in high-traffic areas",
+                    hotspots=["near-sofa", "by-sleep-spot", "traffic-areas"]
+                ),
+                Diagram(
+                    id="furniture-protection",
+                    asset_ref="furniture_protection_methods",
+                    alt="Methods to protect furniture while training kitten to use post",
+                    caption="Temporary protection: foil, tape, or throw blankets",
+                    hotspots=["foil-tape-method", "alternative-nearby"]
+                )
+            ],
             do_list=["Get tall sturdy post", "Put where they scratch", "Praise when they use it", "Trim claws every 2-3 weeks"],
             dont_list=["Punish after the fact", "Declaw", "Use cheap wobbly posts", "Hide post in corner"],
             updated_at=datetime.now()
@@ -332,6 +606,65 @@ Imagine you HAD to stretch when you woke up, and someone put the only stretching
 
 ## Why this matters
 Cats are crepuscular (active at dawn and dusk). Your kitten's body is telling them that 2am is PRIME HUNTING TIME. Your body is telling you that 2am is SLEEP TIME. Someone has to compromise, and it won't be the cat unless you're strategic.
+
+## Bedtime Energy Management
+```
+    24-HOUR ENERGY CYCLE:
+    
+    Your schedule:        Kitten's natural instinct:
+    
+    7am  Wake up          💤 Sleeping (post-dawn hunt)
+    12pm Working          💤 Sleeping  
+    6pm  Tired            ⚡ WAKING UP (dusk = hunt time!)
+    10pm Bedtime          ⚡ PEAK ENERGY!
+    2am  SLEEPING         ⚡⚡⚡ ZOOMIES TIME!!!
+    6am  Alarm            ⚡ Still going...
+    
+    THE FIX: Shift their energy peak earlier
+    
+    8pm  → Play session (15-20 min) = Tire them out
+    9pm  → Small meal = Full tummy  
+    10pm → Lights dim, calm = Sleep signals
+    2am  → 💤 Sleeping (hopefully)
+```
+
+## Bedtime Protocol Flowchart
+```
+    1 hour before YOUR bedtime
+            ↓
+    ┌───────────────────────┐
+    │ ACTIVE PLAY SESSION   │
+    │ 15-20 minutes         │
+    │ Use wand toys         │
+    │ Make them RUN         │
+    └───────────────────────┘
+            ↓
+    Hunt → Catch → Eat pattern
+            ↓
+    30 minutes before bed
+            ↓
+    ┌───────────────────────┐
+    │ SMALL MEAL            │
+    │ or big treat          │
+    │ Full belly = sleepy   │
+    └───────────────────────┘
+            ↓
+    ┌───────────────────────┐
+    │ CALM ENVIRONMENT      │
+    │ Dim lights            │
+    │ Quiet voices          │
+    └───────────────────────┘
+            ↓
+    Your bedtime → Door shut
+            ↓
+    Kitten screaming?
+      ↓           ↓
+    IGNORE!    DO NOT ENGAGE
+      ↓
+    Takes 3-7 days consistency
+      ↓
+    Success! Sleepy kitten 💤
+```
 
 ## Do this now (if you're panicking)
 1. **Ignore them** - do not engage, do not throw things, do not shout (attention = reward)
@@ -389,7 +722,22 @@ Imagine your flatmate woke you at 2am to play football because THEY'RE not tired
             age_max_weeks=52,
             urgency="",
             analogy_cards=["Negotiate an energy budget - they have 100 units, make sure they spend them before midnight"],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="energy-cycle-comparison",
+                    asset_ref="cat_human_energy_cycles",
+                    alt="Comparison of human sleep schedule vs kitten natural energy peaks",
+                    caption="Your 2am is their prime time - shift their peak earlier",
+                    hotspots=["crepuscular-pattern", "schedule-mismatch", "energy-shift"]
+                ),
+                Diagram(
+                    id="bedtime-protocol-flow",
+                    asset_ref="bedtime_routine_flowchart",
+                    alt="Step-by-step bedtime protocol flowchart for tiring out kitten",
+                    caption="Hunt → Catch → Eat → Sleep pattern for peaceful nights",
+                    hotspots=["play-timing", "feeding-timing", "consistency"]
+                )
+            ],
             do_list=["Tire them out before bed", "Feed before bed", "Ignore nighttime activity", "Block under-bed access"],
             dont_list=["Feed when they wake you", "Play at 2am", "Shout or spray water", "Give in to screaming"],
             updated_at=datetime.now()
@@ -402,6 +750,66 @@ Imagine your flatmate woke you at 2am to play football because THEY'RE not tired
             markdown_body="""# When to Call a Vet NOW 🔴
 
 This is not a complete list. When in doubt, ring your vet. They'd rather you called unnecessarily than waited too long.
+
+## Emergency Quick Reference Chart
+```
+    SYMPTOM                          TIMEFRAME        ACTION
+    ═══════════════════════════════════════════════════════════
+    
+    🫁 Difficulty breathing          IMMEDIATELY      VET NOW
+    💙 Pale/blue gums                IMMEDIATELY      VET NOW
+    🚫 No urine 12+ hours            IMMEDIATELY      VET NOW
+    🩸 Blood anywhere                IMMEDIATELY      VET NOW
+    💤 Unresponsive/collapse         IMMEDIATELY      VET NOW
+    🤮 Repeated vomiting             IMMEDIATELY      VET NOW
+    🌡️ Very cold/hot                 IMMEDIATELY      VET NOW
+    ☠️ Possible poisoning            IMMEDIATELY      VET NOW
+    
+    💧 No drinking 12+ hours         CALL VET NOW
+    🍽️ No eating 24+ hours          CALL VET NOW
+    😾 Sudden aggression             CALL VET NOW
+    👁️ Eye injury/swelling           CALL VET NOW
+    🤕 Fall from height              CALL VET NOW
+    
+    WHEN IN DOUBT → RING VET
+```
+
+## Urgency Level Guide
+```
+    🔴 RED = VET NOW (0-30 minutes)
+    ├─ Can't breathe properly
+    ├─ Can't urinate (straining with nothing)
+    ├─ Collapsed/unresponsive
+    ├─ Suspected poisoning
+    └─ Severe bleeding
+    
+    🟠 ORANGE = VET TODAY (within hours)
+    ├─ Not eating 24+ hours
+    ├─ Not drinking 12+ hours
+    ├─ Repeated vomiting
+    ├─ Severe diarrhoea
+    └─ Sudden behaviour change
+    
+    🟡 YELLOW = MONITOR & VET SOON (next day)
+    ├─ Not eating 12-24 hours
+    ├─ Single vomit (but otherwise OK)
+    ├─ Sneezing (but eating/playing)
+    └─ Minor scratches (no swelling)
+```
+
+## Common UK Kitten Poisons ☠️
+```
+    EXTREMELY TOXIC:             TOXIC:
+    ✗ Lilies (all parts)         ✗ Chocolate
+    ✗ Paracetamol               ✗ Onions/garlic
+    ✗ Essential oils             ✗ Grapes/raisins
+    ✗ Antifreeze                ✗ Xylitol (sugar-free)
+    
+    ONE DOSE CAN KILL A KITTEN
+    ↓
+    CALL VET IMMEDIATELY
+    (Even if they seem fine now)
+```
 
 ## Ring vet IMMEDIATELY if:
 
@@ -490,7 +898,29 @@ Vets would rather you called. You will not be wasting their time. Kittens can de
             age_max_weeks=52,
             urgency="Now",
             analogy_cards=["When in doubt, ring. Vets prefer false alarms to too late."],
-            diagrams=[],
+            diagrams=[
+                Diagram(
+                    id="emergency-quick-reference",
+                    asset_ref="emergency_symptoms_chart",
+                    alt="Quick reference chart of emergency symptoms and required response times",
+                    caption="Symptom → Timeframe → Action guide",
+                    hotspots=["immediate-symptoms", "urgent-symptoms", "monitor-symptoms"]
+                ),
+                Diagram(
+                    id="urgency-levels",
+                    asset_ref="urgency_level_guide",
+                    alt="Three-tier urgency system: Red (now), Orange (today), Yellow (soon)",
+                    caption="Red = 0-30 min | Orange = hours | Yellow = next day",
+                    hotspots=["red-flags", "orange-flags", "yellow-flags"]
+                ),
+                Diagram(
+                    id="common-poisons",
+                    asset_ref="uk_kitten_poisons_chart",
+                    alt="Visual list of common UK household poisons toxic to kittens",
+                    caption="Lilies, paracetamol, essential oils - one dose can kill",
+                    hotspots=["extremely-toxic", "toxic", "poison-response"]
+                )
+            ],
             do_list=["Have vet number saved", "Know out-of-hours emergency number", "Trust your instincts", "Keep kitten warm and calm"],
             dont_list=["Wait to see if it gets better", "Google for hours instead of calling", "Give human medicine", "Panic - act calmly"],
             updated_at=datetime.now()
