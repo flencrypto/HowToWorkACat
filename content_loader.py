@@ -222,26 +222,25 @@ Would you use a public toilet with no door, next to the kitchen, that hasn't bee
 ## Why this matters
 "It's cute when they're tiny" becomes "I'm bleeding through my jeans" very quickly. Kittens have needle teeth and no concept of gentle. Teach them now or regret it when they're 5kg of muscle with sabres.
 
-## Cat Body Language Decoder
+## Cat Body Language Decoder (branded palette)
 
-```
-    HAPPY TO PLAY ✅                OVERSTIMULATED ⚠️           STOP NOW 🛑
-    
-     /\_/\                          /\_/\                       /\_/\
-    ( ^.^ )                        ( o.o )                     ( >.< )
-     > ^ <                          > ~ <                       > ∩ <
-    ┌─────┐                        ┌─────┐                     ┌─────┐
-    │ ~   │ Relaxed tail           │ ~~~ │ Tail flicking       │ ||| │ Tail lashing
-    │     │ Forward ears           │     │ Ears sideways       │     │ Ears flat back
-    │     │ Soft eyes              │     │ Dilated pupils      │     │ Tense body
-    
-    "Let's play!"                  "Getting too much"          "STOP OR I BITE"
-    
-    WHAT TO DO:
-    ✅ Initiate play              ⚠️ Slow down                🛑 Walk away
-    ✅ Offer toys                 ⚠️ Watch closely            🛑 Give space
-    ✅ Engage                     ⚠️ Reduce intensity         🛑 End interaction
-```
+### ✅ Happy to play (sage green)
+- Relaxed tail
+- Forward ears
+- Soft eyes
+- What to do: “Let’s play!” — initiate play, offer toys, engage
+
+### 🟠 Overstimulated (amber/orange)
+- Tail flicking
+- Ears sideways
+- Dilated pupils
+- What to do: Slow down — reduce intensity, watch closely
+
+### 🛑 Stop now (brick red)
+- Tail lashing
+- Ears flat back
+- Tense body
+- What to do: STOP OR I BITE — walk away, give space, end interaction
 
 ## Bite Prevention Flowchart
 ```
@@ -740,6 +739,136 @@ Imagine your flatmate woke you at 2am to play football because THEY'RE not tired
             ],
             do_list=["Tire them out before bed", "Feed before bed", "Ignore nighttime activity", "Block under-bed access"],
             dont_list=["Feed when they wake you", "Play at 2am", "Shout or spray water", "Give in to screaming"],
+            updated_at=datetime.now()
+        ),
+        
+        Guide(
+            id="preparing-arrival",
+            title="Preparing for kitten arrival: turn your flat into a five-star cattery",
+            summary="Supply checklist with handy links and a calm room layout so day-one feels like a holiday, not a hostage situation",
+            markdown_body="""# Preparing for Kitten Arrival: Five-Star Cattery Setup
+
+## Why this matters
+First impressions stick. A kitten who lands in chaos will associate you with chaos. A kitten who lands in a cosy, prepped base camp will think "Ah, my new staff have taste."
+
+## Shopping list with quick links
+- [Litter tray](https://amzn.to/4pAAnEJ) — big enough for them to turn comfortably
+- [Litter](https://amzn.to/49vJCBz) — unscented, clumping so scooping is easy
+- [Kitten food](https://amzn.to/49TqoFQ) — age-appropriate fuel
+- Food & water bowls — shallow, whisker-friendly
+- Cat carrier — top-opening if possible (feels less like a prison van)
+- Snuggly bed or box with blanket (bonus points: your worn t-shirt)
+- Scratching post and a couple of toys (wand toy + cardboard scratcher)
+
+## Room layout cheat (base camp)
+```
+    DOOR
+    ┌────────────────────────┐
+    │ 👕 Scented bed          │
+    │ (your t-shirt)         │
+    │                        │
+    │            💧 Water    │
+    │            🍽️ Food     │
+    │                        │
+    │ 🚽 Litter tray (far    │
+    │ from food)             │
+    │                        │
+    │ 📦 Cardboard box hide  │
+    └────────────────────────┘
+```
+
+## Do this now (if you're panicking)
+1. Choose the calmest room as base camp; close windows/under-bed gaps.
+2. Place [litter tray](https://amzn.to/4pAAnEJ) and [litter](https://amzn.to/49vJCBz) in the furthest corner from food.
+3. Set out [kitten food](https://amzn.to/49TqoFQ) and water in shallow bowls.
+4. Lay out the carrier as an open den with blanket inside.
+5. Add your worn t-shirt to the bed (instant comfort cheat code).
+
+## Do
+- ✅ Keep everything in one room for the first 24-48 hours
+- ✅ Show them the tray and the bowls calmly, then sit and ignore them
+- ✅ Use night-light or dim lamp so they can navigate at night
+- ✅ Keep carrier accessible so it feels like a cosy cave, not a kidnap box
+
+## Don't
+- ❌ Move the litter tray daily (consistency prevents accidents)
+- ❌ Introduce the whole house on day one
+- ❌ Light scented candles or use strong cleaners (their nose is better than yours)
+- ❌ Chase them to cuddle; let them make the first move
+
+## Human analogy
+Imagine checking into a hotel where the bed is made with your favourite jumper, the bathroom is spotless, and room service already knows your order. That's the vibe.
+
+## Red flags - ring vet NOW
+- 🔴 Arrives lethargic, unresponsive, or breathing oddly
+- 🔴 Vomiting/diarrhoea in the first hours (could be travel stress, could be more)
+- 🔴 Not drinking within 12 hours of arrival
+""",
+            topics=["Onboarding", "Litter", "Feeding"],
+            age_min_weeks=0,
+            age_max_weeks=24,
+            urgency="",
+            analogy_cards=["Prep like you're hosting a very small, very judgey celebrity."],
+            diagrams=[],
+            do_list=["Keep base camp contained", "Use unscented litter", "Make carrier a den", "Add your scent to bedding"],
+            dont_list=["Move litter tray around", "Overwhelm with full-house tour", "Use strong scents", "Force cuddles"],
+            updated_at=datetime.now()
+        ),
+        
+        Guide(
+            id="carrier-training",
+            title="Carrier training: turn the cat carrier into a cosy spaceship",
+            summary="Make the carrier a safe nap pod so vet trips feel like a taxi, not a kidnap",
+            markdown_body="""# Carrier Training: The Cosy Spaceship Protocol
+
+## Why this matters
+Emergencies are not the time to discover your kitten thinks the carrier is a dragon's mouth. Teach them now that the box = bed on wheels.
+
+## Setup in 10 minutes
+1. Leave the carrier out permanently, door open.
+2. Put a soft blanket + your t-shirt inside.
+3. Sprinkle a few treats or a pinch of catnip in there daily.
+4. Feed one snack a day inside the carrier (door still open).
+
+## Upgrade to door practice
+- Start closing the door for 5-10 seconds while they eat, then open and praise.
+- Gradually extend to 1-2 minutes with you nearby.
+- Pick the carrier up, set it down, treat. Repeat until boring.
+
+## Travel dress rehearsal
+```
+    Door open → Treats inside → Door closed 20s → Lift & set down → Treat
+    Repeat 3-4 times a week until they roll their eyes at you.
+```
+
+## Do
+- ✅ Keep the carrier visible and inviting daily
+- ✅ Use top-loading carriers for easier, calmer loading
+- ✅ Practice tiny car rides when they're calm, not when late for vet
+- ✅ Line with puppy pad for travel days (in case of nervous wee)
+
+## Don't
+- ❌ Only bring carrier out for vet day (guaranteed panic association)
+- ❌ Chase them into it; lure with treats or drop a trail of biscuits
+- ❌ Lock them in for long periods "to get them used to it"
+- ❌ Forget to secure the carrier with a seatbelt in the car
+
+## Human analogy
+Imagine if your only experience of cars was being shoved into one while ill. You'd hate cars. Make the carrier their cosy taxi, not a prison van.
+
+## Red flags - ring vet NOW
+- 🔴 Panting, drooling, or open-mouth breathing in the carrier
+- 🔴 Sudden refusal to walk, collapse, or extreme distress
+- 🔴 Vomiting repeatedly during short practice trips
+""",
+            topics=["Behaviour", "Health", "Emergency"],
+            age_min_weeks=0,
+            age_max_weeks=52,
+            urgency="",
+            analogy_cards=["Think of the carrier as a cat-sized spaceship: engines on, blankets ready, destination: vet without drama."],
+            diagrams=[],
+            do_list=["Leave carrier out daily", "Practice short closures", "Reward calm loading", "Secure carrier in car"],
+            dont_list=["Only use carrier for vet days", "Force them inside", "Skip practice lifts", "Travel without lining"],
             updated_at=datetime.now()
         ),
         
