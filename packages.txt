@@ -1,2 +1,1 @@
-# System-level packages required for the app
-# This file is used by Streamlit Cloud deployment
+
