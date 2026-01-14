@@ -1,0 +1,17 @@
+# Docker ignore file
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+.git
+.gitignore
+*.md
+.streamlit/secrets.toml
+# Exclude database only if you want it generated fresh on each deployment
+# Remove the line below if you want to include pre-populated database
+# *.db
