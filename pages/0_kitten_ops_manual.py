@@ -12,18 +12,18 @@ st.set_page_config(
 st.markdown("""
 <style>
     .step-card {
-        border: 2px solid #3498db;
+        border: 2px solid #E39A3B;
         border-radius: 8px;
         padding: 1rem;
         margin: 0.5rem 0;
-        background-color: #f0f8ff;
+        background-color: #FFFFFF;
     }
     .step-complete {
-        border-color: #27ae60;
-        background-color: #d4edda;
+        border-color: #8FAF9A;
+        background-color: #f0f8f5;
     }
     .step-number {
-        background-color: #3498db;
+        background-color: #E39A3B;
         color: white;
         border-radius: 50%;
         width: 40px;
@@ -36,13 +36,13 @@ st.markdown("""
         margin-right: 1rem;
     }
     .progress-bar {
-        background-color: #e0e0e0;
+        background-color: #B8B8B8;
         border-radius: 10px;
         height: 20px;
         margin: 1rem 0;
     }
     .progress-fill {
-        background-color: #27ae60;
+        background-color: #8FAF9A;
         height: 100%;
         border-radius: 10px;
         transition: width 0.3s;

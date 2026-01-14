@@ -12,15 +12,15 @@ st.set_page_config(
 st.markdown("""
 <style>
     .guide-card {
-        border: 1px solid #ddd;
+        border: 1px solid #B8B8B8;
         border-radius: 8px;
         padding: 1rem;
         margin: 0.5rem 0;
-        background-color: #f9f9f9;
+        background-color: #FFFFFF;
     }
     .topic-badge {
         display: inline-block;
-        background-color: #3498db;
+        background-color: #E39A3B;
         color: white;
         padding: 0.25rem 0.5rem;
         border-radius: 3px;
@@ -35,7 +35,7 @@ st.markdown("""
         font-size: 0.8rem;
     }
     .urgency-today {
-        background-color: #ff9800;
+        background-color: #E39A3B;
         color: white;
         padding: 0.25rem 0.5rem;
         border-radius: 3px;
