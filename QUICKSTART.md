@@ -1,6 +1,10 @@
 # Quick Start Guide
 
+<<<<<<< HEAD
 ## How To Work A Cat 🐱
+=======
+## How to Work a Cat 🐱
+>>>>>>> main
 
 A playful, UK-toned, offline-first kitten-care guide built with Streamlit.
 

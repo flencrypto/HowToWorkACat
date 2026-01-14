@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Project Summary: How To Work A Cat
+=======
+# Project Summary: How to Work a Cat
+>>>>>>> main
 
 ## Overview
 A playful, UK-toned, offline-first kitten-care guide for first-time kitten owners, built with Streamlit.
