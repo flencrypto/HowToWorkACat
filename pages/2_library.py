@@ -128,9 +128,9 @@ with st.sidebar:
     st.markdown("### 📚 Topics Overview")
     if st.button("All Topics", use_container_width=True):
         st.session_state["library_selected_topic"] = "All Topics"
-        st.experimental_rerun()
+        st.rerun()
     for topic in sorted(topics.keys()):
         count = len(topics[topic])
         if st.button(f"{topic} ({count})", key=f"sidebar_{topic}", use_container_width=True):
             st.session_state["library_selected_topic"] = topic
-            st.experimental_rerun()
+            st.rerun()
