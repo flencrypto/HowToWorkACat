@@ -5,11 +5,7 @@ import os
 
 # Page configuration
 st.set_page_config(
-<<<<<<< HEAD
     page_title="How To Work A Cat 🐱",
-=======
-    page_title="How to Work a Cat 🐱",
->>>>>>> main
     page_icon="🐱",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -80,11 +76,7 @@ def init_database():
 db = init_database()
 
 # Main page
-<<<<<<< HEAD
 st.markdown('<div class="main-header">🐱 How To Work A Cat</div>', unsafe_allow_html=True)
-=======
-st.markdown('<div class="main-header">🐱 How to Work a Cat</div>', unsafe_allow_html=True)
->>>>>>> main
 st.markdown("### A playful, UK-toned guide for first-time kitten owners")
 
 # Quick panic buttons

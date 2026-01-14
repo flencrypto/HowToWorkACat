@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 """Data models for How To Work A Cat kitten-care guide."""
-=======
-"""Data models for How to Work a Cat kitten-care guide."""
->>>>>>> main
 from dataclasses import dataclass
 from typing import List, Optional
 from datetime import datetime
