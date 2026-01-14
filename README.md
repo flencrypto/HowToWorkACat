@@ -1,17 +1,58 @@
-![Clarifai logo](https://www.clarifai.com/hs-fs/hubfs/logo/Clarifai/clarifai-740x150.png?width=240)
+# How to Work a Cat 🐱
 
-# HowatoWorkACat
+A playful, UK-toned, offline-first kitten-care guide for first-time kitten owners, families, and temporary fosterers.
 
-This is a Clarifai UI module for HowatoWorkACat.
+## Overview
 
+**How to Work a Cat** is a reassuring, lightly sarcastic guide explaining real kitten needs via analogies, metaphors, and human comparisons. Think: "keep the litter tray like a shared bathroom you'd happily eat toast in" or "you're not a 24/7 chew-toy subscription service".
 
-## To use this repo
+### Core Features
 
-1. Click the "Use this template" green button on github to make a repo from this repo template and give it a name of the format module-{XYZ} filling in the XYZ portion. 
-2. Clone the new repo as normal to your development environment.
-3. `pip install -r requirements.txt` to make sure you have all the Python packages installed. Add any new packages to this requirements.txt file that you add during development.
-4. Update the README.md to capture what your new module will do.
-5. Rename the pages/*.py files as you desire and start filling them in to implement your module.
-6. After you're tried things out locally, push your changes to github and get the git commit URL from there in order to create a module in Clarifai. 
-7. Go to any app you can create in within Clarifai, select Modules on the left and "Create Module" button, then follow the steps.
+- 🔍 **Offline Search**: Full-text search with filters (age, topic, urgency)
+- 📚 **Kitten Ops Manual**: Step-by-step onboarding checklist for your first 10 steps
+- 🎨 **Diagram Pack**: Visual guides for safe room setup, body language, poison risks
+- 🆘 **Panic Buttons**: Quick access to "Not eating", "Litter disasters", "Scratching sofa", etc.
+- 💾 **Offline-first**: All content bundled and searchable without internet
+
+### Target Users
+
+- First-time kitten owners in panic mode
+- Parents with family kitten
+- Temporary fosterers
+- Anyone facing: biting, scratching, zoomies at 3am, hiding, or litter disasters
+
+### Content Principles
+
+- UK spelling (behaviour, favourite, colour)
+- Every page includes: "Why this matters", "If you're stuck" box, "Do this now" panic steps
+- Warm, reassuring tone that's never mean or cruel
+- Sourced from RSPCA, Cats Protection, and vetted vet guidance
+- Clear red flags for "call a vet NOW" situations
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## Usage
+
+Navigate through the sidebar to access:
+- **Guide**: Onboarding flows and progress tracking
+- **Search**: Find help for specific issues
+- **Library**: Browse by topic (Feeding, Litter, Behaviour, Health, Safety)
+- **Saved**: Your bookmarked guides
+- **Emergency**: When to call a vet NOW
+
+## Safety Framework
+
+Urgency levels clearly marked:
+- 🔴 **Now**: Call vet immediately (breathing issues, persistent vomiting, blood in stool)
+- 🟠 **Today**: Schedule vet visit today
+- 🟡 **Monitor**: Watch and note, mention at next checkup
+
+## License
+
+See LICENSE file for details.
 
