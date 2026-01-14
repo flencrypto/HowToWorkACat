@@ -21,7 +21,7 @@ st.markdown("""
         margin-bottom: 1rem;
     }
     .urgency-today {
-        background-color: #ff9800;
+        background-color: #E39A3B;
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 5px;
@@ -31,7 +31,7 @@ st.markdown("""
     }
     .topic-badge {
         display: inline-block;
-        background-color: #3498db;
+        background-color: #E39A3B;
         color: white;
         padding: 0.25rem 0.5rem;
         border-radius: 3px;

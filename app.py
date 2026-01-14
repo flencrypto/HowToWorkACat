@@ -17,7 +17,7 @@ st.markdown("""
     .main-header {
         font-size: 2.5rem;
         font-weight: bold;
-        color: #2c3e50;
+        color: #2E2E2E;
         margin-bottom: 1rem;
     }
     .urgency-now {
@@ -28,29 +28,29 @@ st.markdown("""
         font-weight: bold;
     }
     .urgency-today {
-        background-color: #ff9800;
+        background-color: #E39A3B;
         color: white;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         font-weight: bold;
     }
     .urgency-monitor {
-        background-color: #ffc107;
-        color: black;
+        background-color: #8FAF9A;
+        color: white;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         font-weight: bold;
     }
     .guide-card {
-        border: 1px solid #ddd;
+        border: 1px solid #B8B8B8;
         border-radius: 8px;
         padding: 1rem;
         margin: 0.5rem 0;
-        background-color: #f9f9f9;
+        background-color: #FFFFFF;
     }
     .topic-badge {
         display: inline-block;
-        background-color: #3498db;
+        background-color: #E39A3B;
         color: white;
         padding: 0.25rem 0.5rem;
         border-radius: 3px;
