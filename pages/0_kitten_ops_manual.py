@@ -1,4 +1,4 @@
-"""Kitten Ops Manual - onboarding flow for new kitten owners."""
+"""Kitten Ops Manual - onboarding flow for new kitten owners (v2)."""
 import streamlit as st
 from database import KittenGuideDB
 
@@ -8,44 +8,84 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS
+# V2 CSS
 st.markdown("""
 <style>
+    :root {
+        --cat-orange: #F07A33;
+        --cat-green:  #5BAD8B;
+        --cat-purple: #7B5EA7;
+        --cat-red:    #E84040;
+    }
+    .ops-hero {
+        background: linear-gradient(135deg, #3AAFA9 0%, #7B5EA7 100%);
+        border-radius: 14px;
+        padding: 1.5rem 2rem;
+        color: white;
+        margin-bottom: 1.2rem;
+    }
+    .ops-hero h2 { margin: 0; font-size: 2rem; font-weight: 900; }
+    .ops-hero p  { margin: 0.3rem 0 0; opacity: 0.9; }
+
     .step-card {
-        border: 2px solid #E39A3B;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
+        border: 2px solid #e0d0f8;
+        border-radius: 12px;
+        padding: 1.1rem 1.3rem;
+        margin: 0.6rem 0;
         background-color: #FFFFFF;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .step-complete {
-        border-color: #8FAF9A;
-        background-color: #f0f8f5;
+        border-color: var(--cat-green);
+        background-color: #f0fbf6;
     }
     .step-number {
-        background-color: #E39A3B;
+        background: linear-gradient(135deg, var(--cat-orange), var(--cat-purple));
         color: white;
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        font-size: 1.2rem;
-        margin-right: 1rem;
+        font-size: 1.1rem;
+        margin-right: 0.8rem;
+        flex-shrink: 0;
     }
-    .progress-bar {
-        background-color: #B8B8B8;
+    .step-number-done {
+        background: var(--cat-green);
+    }
+    .xp-badge {
+        display: inline-block;
+        background: linear-gradient(90deg, var(--cat-orange), var(--cat-purple));
+        color: white;
+        padding: 0.2rem 0.65rem;
+        border-radius: 20px;
+        font-size: 0.78rem;
+        font-weight: bold;
+        margin-left: 0.5rem;
+    }
+    .rank-banner {
+        background: linear-gradient(90deg, #fff8e7, #ffe0b2);
+        border-left: 5px solid var(--cat-orange);
         border-radius: 10px;
-        height: 20px;
+        padding: 0.8rem 1.2rem;
         margin: 1rem 0;
+        font-size: 1.05rem;
     }
-    .progress-fill {
-        background-color: #8FAF9A;
+    .progress-outer {
+        background: #e0e0e0;
+        border-radius: 20px;
+        height: 24px;
+        overflow: hidden;
+        margin: 0.6rem 0;
+    }
+    .progress-inner {
         height: 100%;
-        border-radius: 10px;
-        transition: width 0.3s;
+        border-radius: 20px;
+        background: linear-gradient(90deg, var(--cat-green), var(--cat-orange));
+        transition: width 0.5s ease;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -57,8 +97,29 @@ def get_db():
 
 db = get_db()
 
-st.title("📋 Kitten Ops Manual")
-st.markdown("### Your step-by-step guide to bringing home a kitten")
+# ── Rank system ────────────────────────────────────────────────────────────────
+RANKS = [
+    (0,  "🥚 Total Beginner",         "You've read the title. Respect."),
+    (2,  "🐣 Nervous New Parent",      "Two steps in. The kitten is alive. Progress!"),
+    (4,  "😬 Cautiously Optimistic",   "Four steps done. The litter tray situation is improving."),
+    (6,  "🙂 Getting the Hang of It",  "Six steps complete. Your kitten tolerates you now."),
+    (8,  "😎 Seasoned Kitten Wrangler","Eight steps! You can now locate the kitten in under 3 minutes."),
+    (10, "🏆 Certified Cat Butler",    "All 10 steps! Your kitten has accepted you as staff."),
+]
+
+def get_rank(done: int) -> tuple:
+    for threshold, label, flavour in reversed(RANKS):
+        if done >= threshold:
+            return label, flavour
+    return RANKS[0][1], RANKS[0][2]
+
+# ── Hero ───────────────────────────────────────────────────────────────────────
+st.markdown("""
+<div class="ops-hero">
+  <h2>📋 Kitten Ops Manual</h2>
+  <p>Your step-by-step guide to bringing home a kitten — earn XP as you go</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Initialize progress in session state
 if 'ops_manual_progress' not in st.session_state:
@@ -202,12 +263,24 @@ steps = [
 completed_steps = len(st.session_state['ops_manual_progress'])
 total_steps = len(steps)
 progress_percentage = (completed_steps / total_steps) * 100
+xp = completed_steps * 100
+
+rank_label, rank_flavour = get_rank(completed_steps)
+
+# Rank banner
+st.markdown(f"""
+<div class="rank-banner">
+  🎮 <strong>Your Rank:</strong> {rank_label}
+  <span class="xp-badge">⚡ {xp} XP</span><br>
+  <small style="color:#555">{rank_flavour}</small>
+</div>
+""", unsafe_allow_html=True)
 
 # Progress bar
-st.markdown(f"### Progress: {completed_steps}/{total_steps} steps completed")
+st.markdown(f"**Progress: {completed_steps}/{total_steps} steps completed**")
 st.markdown(f"""
-<div class="progress-bar">
-    <div class="progress-fill" style="width: {progress_percentage}%"></div>
+<div class="progress-outer">
+  <div class="progress-inner" style="width:{progress_percentage}%"></div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -218,6 +291,8 @@ for idx, step in enumerate(steps, 1):
     step_id = step['id']
     is_complete = step_id in st.session_state['ops_manual_progress']
     card_class = "step-card step-complete" if is_complete else "step-card"
+    num_class = "step-number step-number-done" if is_complete else "step-number"
+    step_display = "✅" if is_complete else str(idx)
     
     with st.container():
         st.markdown(f'<div class="{card_class}">', unsafe_allow_html=True)
@@ -225,8 +300,9 @@ for idx, step in enumerate(steps, 1):
         col1, col2 = st.columns([4, 1])
         
         with col1:
-            st.markdown(f'<span class="step-number">{idx}</span>', unsafe_allow_html=True)
-            st.markdown(f"### {step['title']}", unsafe_allow_html=False)
+            st.markdown(f'<span class="{num_class}">{step_display}</span>', unsafe_allow_html=True)
+            title_suffix = ' <span class="xp-badge">+100 XP</span>' if is_complete else ""
+            st.markdown(f"### {step['title']}{title_suffix}", unsafe_allow_html=True)
             st.markdown(f"*{step['description']}*")
             
             # Checklist

@@ -4,6 +4,12 @@
 
 # This file provides a redirect to inform users about proper deployment
 
+[build]
+  # No build step required — this is a static redirect-only site.
+  # The command below overrides any build command set in the Netlify UI.
+  command = "echo 'No build required: static redirect only'"
+  publish = "."
+
 [[redirects]]
   from = "/*"
   to = "/deployment-info.html"
