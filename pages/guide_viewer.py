@@ -1,4 +1,4 @@
-"""Guide viewer page - displays individual guide content."""
+"""Guide viewer page - displays individual guide content (v2)."""
 import streamlit as st
 from database import KittenGuideDB
 
@@ -8,35 +8,82 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS
+# V2 CSS
 st.markdown("""
 <style>
-    .urgency-now {
-        background-color: #ff4444;
+    :root {
+        --cat-orange: #F07A33;
+        --cat-teal:   #3AAFA9;
+        --cat-purple: #7B5EA7;
+        --cat-red:    #E84040;
+        --cat-green:  #5BAD8B;
+    }
+    .guide-hero {
+        background: linear-gradient(135deg, var(--cat-teal) 0%, var(--cat-purple) 100%);
+        border-radius: 14px;
+        padding: 1.5rem 2rem;
         color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        margin-bottom: 1.2rem;
+    }
+    .guide-hero h1 { margin: 0; font-size: 1.9rem; font-weight: 900; }
+    .guide-hero p  { margin: 0.3rem 0 0; opacity: 0.9; font-size: 1.05rem; }
+
+    .urgency-now {
+        background-color: var(--cat-red);
+        color: white;
+        padding: 0.3rem 0.9rem;
+        border-radius: 20px;
         font-weight: bold;
+        font-size: 0.85rem;
         display: inline-block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.6rem;
     }
     .urgency-today {
-        background-color: #E39A3B;
+        background-color: var(--cat-orange);
         color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
+        padding: 0.3rem 0.9rem;
+        border-radius: 20px;
         font-weight: bold;
+        font-size: 0.85rem;
         display: inline-block;
-        margin-bottom: 1rem;
+        margin-bottom: 0.6rem;
     }
     .topic-badge {
         display: inline-block;
-        background-color: #E39A3B;
+        background-color: var(--cat-teal);
         color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 3px;
-        font-size: 0.8rem;
-        margin-right: 0.25rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 12px;
+        font-size: 0.78rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+    .do-dont-row {
+        display: flex;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    .do-box {
+        flex: 1;
+        background: #f0fbf6;
+        border: 2px solid var(--cat-green);
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+    }
+    .dont-box {
+        flex: 1;
+        background: #fff5f5;
+        border: 2px solid var(--cat-red);
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+    }
+    .do-box h4, .dont-box h4 { margin: 0 0 0.4rem; }
+    .related-card {
+        border-radius: 10px;
+        padding: 0.7rem 1rem;
+        background: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 0.3rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -83,30 +130,56 @@ with col3:
             db.add_bookmark(guide.id)
             st.rerun()
 
-# Display urgency if applicable
+# Track guide as read
+if 'guides_read' not in st.session_state:
+    st.session_state['guides_read'] = set()
+st.session_state['guides_read'].add(guide.id)
+
+# Hero card
+urgency_html = ""
 if guide.urgency:
     urgency_class = f"urgency-{guide.urgency.lower()}"
-    st.markdown(f'<div class="{urgency_class}">⚠️ Urgency: {guide.urgency.upper()}</div>', unsafe_allow_html=True)
+    urgency_html = f'<span class="{urgency_class}">⚠️ {guide.urgency.upper()}</span><br><br>'
 
-# Display title and summary
-st.title(guide.title)
-st.markdown(f"*{guide.summary}*")
+topic_html = " ".join([f'<span class="topic-badge">{t}</span>' for t in guide.topics])
 
-# Topic badges
-if guide.topics:
-    topic_html = " ".join([f'<span class="topic-badge">{topic}</span>' for topic in guide.topics])
-    st.markdown(topic_html, unsafe_allow_html=True)
-
-# Age range if specified
+age_html = ""
 if guide.age_min_weeks is not None or guide.age_max_weeks is not None:
     age_min = guide.age_min_weeks or 0
     age_max = guide.age_max_weeks or "any age"
-    st.caption(f"📅 Relevant for kittens: {age_min}-{age_max} weeks")
+    age_html = f'<br><small>📅 Relevant for kittens: {age_min}–{age_max} weeks</small>'
+
+st.markdown(f"""
+<div class="guide-hero">
+{urgency_html}<h1>{guide.title}</h1>
+<p>{guide.summary}</p>
+{age_html}
+</div>
+{topic_html}
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 
-# Display the main content
+# Main content
 st.markdown(guide.markdown_body)
+
+# Do / Don't visual cards (if available)
+if guide.do_list or guide.dont_list:
+    st.markdown("---")
+    do_items   = "".join([f"<li>✅ {item}</li>" for item in guide.do_list])
+    dont_items = "".join([f"<li>❌ {item}</li>" for item in guide.dont_list])
+    st.markdown(f"""
+<div class="do-dont-row">
+  <div class="do-box">
+    <h4>✅ Do</h4>
+    <ul style="margin:0;padding-left:1.2rem">{do_items}</ul>
+  </div>
+  <div class="dont-box">
+    <h4>❌ Don't</h4>
+    <ul style="margin:0;padding-left:1.2rem">{dont_items}</ul>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 

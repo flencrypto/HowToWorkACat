@@ -1,4 +1,4 @@
-"""Library page - browse guides by topic."""
+"""Library page - browse guides by topic (v2)."""
 import streamlit as st
 from database import KittenGuideDB
 
@@ -8,38 +8,58 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS
+# V2 CSS
 st.markdown("""
 <style>
+    :root {
+        --cat-orange: #F07A33;
+        --cat-teal:   #3AAFA9;
+        --cat-purple: #7B5EA7;
+        --cat-red:    #E84040;
+        --cat-green:  #5BAD8B;
+    }
+    .library-hero {
+        background: linear-gradient(135deg, #5BAD8B 0%, #3AAFA9 100%);
+        border-radius: 14px;
+        padding: 1.4rem 2rem;
+        color: white;
+        margin-bottom: 1.2rem;
+    }
+    .library-hero h2 { margin: 0; font-size: 2rem; font-weight: 900; }
+    .library-hero p  { margin: 0.3rem 0 0; opacity: 0.9; }
     .guide-card {
-        border: 1px solid #B8B8B8;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
+        border: none;
+        border-radius: 12px;
+        padding: 1.1rem 1.3rem;
+        margin: 0.6rem 0;
         background-color: #FFFFFF;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
     }
     .topic-badge {
         display: inline-block;
-        background-color: #E39A3B;
+        background-color: var(--cat-teal);
         color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 3px;
-        font-size: 0.8rem;
-        margin-right: 0.25rem;
+        padding: 0.2rem 0.55rem;
+        border-radius: 12px;
+        font-size: 0.78rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
     }
     .urgency-now {
-        background-color: #ff4444;
+        background-color: var(--cat-red);
         color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 3px;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
         font-size: 0.8rem;
+        font-weight: bold;
     }
     .urgency-today {
-        background-color: #E39A3B;
+        background-color: var(--cat-orange);
         color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 3px;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
         font-size: 0.8rem;
+        font-weight: bold;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -51,8 +71,12 @@ def get_db():
 
 db = get_db()
 
-st.title("📖 Guide Library")
-st.markdown("Browse all kitten-care guides organised by topic")
+st.markdown("""
+<div class="library-hero">
+  <h2>📖 Guide Library</h2>
+  <p>Every guide, organised by topic — for the calm moments between crises</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Get all guides
 all_guides = db.get_all_guides()

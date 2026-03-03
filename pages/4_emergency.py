@@ -1,4 +1,4 @@
-"""Emergency page - when to call vet NOW."""
+"""Emergency page - when to call vet NOW (v2)."""
 import streamlit as st
 from database import KittenGuideDB
 
@@ -8,24 +8,24 @@ st.set_page_config(
     layout="wide"
 )
 
-# Custom CSS for emergency styling
+# V2 CSS for emergency styling
 st.markdown("""
 <style>
-    .emergency-header {
-        background-color: #ff4444;
+    .emergency-hero {
+        background: linear-gradient(135deg, #E84040 0%, #b01010 100%);
+        border-radius: 14px;
+        padding: 1.8rem 2rem;
         color: white;
-        padding: 2rem;
-        border-radius: 8px;
         text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
+    .emergency-hero h1 { font-size: 2.4rem; margin: 0; font-weight: 900; }
+    .emergency-hero p  { margin: 0.5rem 0 0; font-size: 1.1rem; opacity: 0.92; }
     .warning-box {
-        border: 3px solid #ff4444;
-        border-radius: 8px;
+        border: 3px solid #E84040;
+        border-radius: 12px;
         padding: 1rem;
-        background-color: #ffe6e6;
+        background-color: #fff5f5;
         margin: 1rem 0;
     }
 </style>
@@ -39,7 +39,12 @@ def get_db():
 db = get_db()
 
 # Emergency header
-st.markdown('<div class="emergency-header">🔴 EMERGENCY GUIDE 🔴</div>', unsafe_allow_html=True)
+st.markdown("""
+<div class="emergency-hero">
+  <h1>🔴 EMERGENCY GUIDE 🔴</h1>
+  <p>When to call the vet <em>right now</em> — not in the morning, not after a Google — <strong>now</strong></p>
+</div>
+""", unsafe_allow_html=True)
 
 # Get emergency guide
 emergency_guide = db.get_guide("emergency-vet-now")
