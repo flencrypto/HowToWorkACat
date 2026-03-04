@@ -2,6 +2,47 @@
 
 A playful, UK-toned, offline-first kitten-care guide for first-time kitten owners, families, and temporary fosterers.
 
+---
+
+## 📥 Download & Run Locally
+
+You can download and run this app on your own computer — no internet required after the first launch.
+
+### Prerequisites
+
+- **Python 3.8 or newer** — [Download Python](https://www.python.org/downloads/)  
+  *(on Mac you can also use `brew install python`; on most Linux distros it's pre-installed)*
+
+### Option 1 — Download a release package (recommended)
+
+1. Go to the [**Releases page**](https://github.com/flencrypto/HowToWorkACat/releases) and download the package for your platform:
+   - **Windows** → `HowToWorkACat-vX.X.X-windows.zip`
+   - **Mac** → `HowToWorkACat-vX.X.X-mac.tar.gz`
+   - **Linux** → `HowToWorkACat-vX.X.X-linux.tar.gz`
+2. Unzip / extract the archive.
+3. Run the launcher:
+   - **Windows**: double-click `run.bat`
+   - **Mac / Linux**: open a Terminal in the extracted folder and run `bash run.sh`
+4. The app opens automatically in your browser at **http://localhost:8501**.
+
+The launcher creates a Python virtual environment and installs all dependencies for you on the first run.
+
+### Option 2 — Clone / download from GitHub
+
+```bash
+# Clone the repository (or download the ZIP from GitHub → Code → Download ZIP)
+git clone https://github.com/flencrypto/HowToWorkACat.git
+cd HowToWorkACat
+
+# Mac / Linux
+bash run.sh
+
+# Windows
+run.bat
+```
+
+---
+
 ## Overview
 
 **How To Work A Cat** is a reassuring, lightly sarcastic guide explaining real kitten needs via analogies, metaphors, and human comparisons. Think: "keep the litter tray like a shared bathroom you'd happily eat toast in" or "you're not a 24/7 chew-toy subscription service".
@@ -107,7 +148,19 @@ A playful, UK-toned, offline-first kitten-care guide for first-time kitten owner
 
 ## Installation
 
-### Local Development
+### Run locally with the launcher scripts (easiest)
+
+```bash
+# Mac / Linux
+bash run.sh
+
+# Windows — double-click run.bat, or in a terminal:
+run.bat
+```
+
+The script automatically creates a Python virtual environment, installs dependencies, and opens the app in your browser.
+
+### Manual local development
 
 ```bash
 pip install -r requirements.txt

@@ -2,6 +2,41 @@
 
 ## How to Deploy "How To Work A Cat" Streamlit App
 
+---
+
+## 💻 Run Locally (Downloadable App)
+
+This is the simplest way to use the app — download it and run it on your own computer.
+
+### Quick start
+
+1. **Ensure Python 3.8+ is installed** — [python.org/downloads](https://www.python.org/downloads/)
+2. **Download the app:**
+   - From [GitHub Releases](https://github.com/flencrypto/HowToWorkACat/releases): download the ZIP/tar.gz for your platform
+   - Or `git clone https://github.com/flencrypto/HowToWorkACat.git`
+3. **Run the launcher:**
+   - **Mac / Linux**: open a terminal in the folder and run `bash run.sh`
+   - **Windows**: double-click `run.bat`
+4. The app opens in your browser at **http://localhost:8501**. Press `Ctrl+C` to stop.
+
+The launcher scripts handle everything automatically on first run:
+- Create an isolated Python virtual environment (`.venv/`)
+- Install all dependencies from `requirements.txt`
+- Start Streamlit and open your browser
+
+### Creating a release package (maintainers)
+
+Push a version tag to trigger the automated release workflow:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+GitHub Actions will build packages for Windows, Mac, and Linux and publish them as a [GitHub Release](https://github.com/flencrypto/HowToWorkACat/releases).
+
+---
+
 ### ⚠️ Important: Netlify is NOT Compatible
 
 **Netlify cannot host this application** because:
